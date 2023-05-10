@@ -1,0 +1,14 @@
+.nav-item {
+  padding: 0.5rem 1rem;
+  background-color: #cacaca33;
+  backdrop-filter: blur(16px);
+  border-radius: 100rem;
+  color: white;
+  transition: all 0.2s ease-out;
+  font-weight: 600;
+
+  &:where(:hover, :focus-visible) {
+    background-color: #cacaca;
+    color: black;
+  }
+}
