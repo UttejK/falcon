@@ -17,3 +17,13 @@ canvas {
   height: 100vh;
   width: 100vw;
 }
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

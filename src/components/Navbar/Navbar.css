@@ -1,0 +1,19 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  width: 100%;
+  padding: 1.6rem 2rem;
+  background-color: #46464633;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-ul {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
