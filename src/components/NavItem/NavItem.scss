@@ -1,14 +1,15 @@
-.nav-item {
+.nav-link {
   padding: 0.5rem 1rem;
-  background-color: #cacaca33;
-  backdrop-filter: blur(16px);
   border-radius: 100rem;
-  color: white;
+  color: grey;
   transition: all 0.2s ease-out;
   font-weight: 600;
 
   &:where(:hover, :focus-visible) {
-    background-color: #cacaca;
-    color: black;
+    color: white;
+  }
+
+  &--active {
+    color: white;
   }
 }

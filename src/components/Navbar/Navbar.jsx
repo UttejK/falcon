@@ -1,15 +1,19 @@
-import "./Navbar.css";
+import "./Navbar.scss";
 import NavItem from "../NavItem/NavItem";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
     <nav className="navbar">
-      <span>Logo</span>
+      <Link className="Logo" to="/">
+        <h1>F.A.L.C.O.N</h1>
+        {/* <p>Fast Autonomous Lightweight Combat Operations Network</p> */}
+      </Link>
       <ul className="navbar-ul">
-        <NavItem props>Home</NavItem>
-        <NavItem props>Explore</NavItem>
-        <NavItem props>About</NavItem>
-        <NavItem props>Contact</NavItem>
+        <NavItem to="/">Home</NavItem>
+        <NavItem to="/explore">Explore</NavItem>
+        <NavItem to="/about">About</NavItem>
+        <NavItem to="/contact">Contact</NavItem>
       </ul>
     </nav>
   );
