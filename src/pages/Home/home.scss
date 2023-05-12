@@ -1,0 +1,45 @@
+.home {
+  height: 100vh;
+  padding-top: 6rem;
+}
+
+.home-intro {
+  // position: absolute;
+  // left: 8rem;
+  // top: 18rem;
+  margin-top: 10rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 35rem;
+  // background-color: yellow;
+  gap: 0.3rem;
+  color: white;
+
+  h3 {
+    letter-spacing: 0.459rem;
+  }
+
+  a {
+    padding: 0.5rem;
+    gap: 0.4rem;
+    transition: all 0.3s ease-out;
+    color: grey;
+
+    &:hover {
+      color: white;
+    }
+  }
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fullscreen {
+  height: 100vh;
+  width: 100vw;
+  background-color: red;
+}
