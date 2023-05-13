@@ -30,15 +30,9 @@ a {
 }
 
 .page {
-  color: white;
+  background-color: inherit;
+  color: black;
+  mix-blend-mode: difference;
   height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.background-image {
-  background-image: url("assets/paul-mader-drone-1.jpeg");
-  background-size: cover;
-  background-repeat: no-repeat;
 }

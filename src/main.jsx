@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.scss";
 
@@ -7,19 +7,9 @@ import Navbar from "./components/Navbar/Navbar";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
 
 import About from "./pages/About/About";
-// import Explore from "./pages/Explore/Explore";
 import Contact from "./pages/Contact/Contact";
 import Home from "./pages/Home/Home";
-
-const Explore = React.lazy(() => import("./pages/Explore/Explore"));
-
-function Loading() {
-  return (
-    <div className="page background-image">
-      <h1>Loading Please Wait...</h1>
-    </div>
-  );
-}
+import Explore from "./pages/Explore/Explore";
 
 const router = createBrowserRouter([
   {
@@ -37,11 +27,7 @@ const router = createBrowserRouter([
       },
       {
         path: "explore",
-        element: (
-          <Suspense fallback={<Loading />}>
-            <Explore />
-          </Suspense>
-        ),
+        element: <Explore />,
       },
       {
         path: "about",

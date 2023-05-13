@@ -20,18 +20,17 @@ export default function Drone2(props) {
 
   const speed = 800;
 
-  useFrame(({ clock }) => {
-    rotorBackLeft.current.rotation.y = clock.getElapsedTime() * speed;
-    rotorFrontRight.current.rotation.y = clock.getElapsedTime() * speed;
-    rotorBackRight.current.rotation.y = clock.getElapsedTime() * speed * -1;
-    rotorFrontLeft.current.rotation.y = clock.getElapsedTime() * speed * -1;
+  useFrame((_, delta) => {
+    rotorBackLeft.current.rotation.y += delta * speed;
+    rotorFrontRight.current.rotation.y += delta * speed;
+    rotorBackRight.current.rotation.y += delta * speed * -1;
+    rotorFrontLeft.current.rotation.y += delta * speed * -1;
 
     tl.current.seek(scroll?.offset * tl.current.duration());
   });
 
   useLayoutEffect(() => {
     tl.current = gsap.timeline();
-    droneFull.current.setposition = [1, 1, 1];
 
     tl.current.to(droneFull.current.rotation, {
       duration: 2,
@@ -49,8 +48,8 @@ export default function Drone2(props) {
   return (
     <group
       {...props}
-      position={[0.4, -0.1, 0.1]}
-      rotation={[Math.PI / 4, -Math.PI / 4, Math.PI / 8]}
+      // position={[0.4, -0.1, 0.1]}
+      rotation={[degToRad(30), degToRad(-30), 0]}
       dispose={null}
       ref={droneFull}
     >
