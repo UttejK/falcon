@@ -6,6 +6,7 @@ import React, { useLayoutEffect, useRef } from "react";
 import { useGLTF, useScroll } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { gsap } from "gsap";
+import { degToRad } from "three/src/math/MathUtils";
 
 export default function Drone2(props) {
   const rotorBackLeft = useRef();
@@ -13,6 +14,7 @@ export default function Drone2(props) {
   const rotorBackRight = useRef();
   const rotorFrontLeft = useRef();
   const droneFull = useRef();
+
   const tl = useRef();
   const scroll = useScroll();
 
@@ -29,10 +31,17 @@ export default function Drone2(props) {
 
   useLayoutEffect(() => {
     tl.current = gsap.timeline();
+    droneFull.current.setposition = [1, 1, 1];
 
     tl.current.to(droneFull.current.rotation, {
       duration: 2,
-      y: -1,
+      x: -1 * degToRad(30),
+      y: -1 * degToRad(30),
+    });
+    tl.current.to(droneFull.current.rotation, {
+      duration: 2,
+      x: -1 * degToRad(-60),
+      y: -1 * degToRad(90),
     });
   }, []);
 
@@ -40,7 +49,7 @@ export default function Drone2(props) {
   return (
     <group
       {...props}
-      position={[0, 0, 0]}
+      position={[0.4, -0.1, 0.1]}
       rotation={[Math.PI / 4, -Math.PI / 4, Math.PI / 8]}
       dispose={null}
       ref={droneFull}

@@ -42,13 +42,3 @@ a {
   background-size: cover;
   background-repeat: no-repeat;
 }
-
-.Logo {
-  font-family: "Bruno Ace SC", cursive;
-  color: white;
-  transition: all 0.2s ease-out;
-
-  &:where(:hover) {
-    color: black;
-  }
-}

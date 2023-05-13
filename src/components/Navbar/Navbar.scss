@@ -18,3 +18,21 @@
   flex-direction: row;
   gap: 1rem;
 }
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: "Bruno Ace SC", cursive;
+  color: white;
+  transition: all 0.2s ease-out;
+
+  &:where(:hover) {
+    color: lightcoral;
+  }
+}
+
+.logo-image {
+  width: 50px;
+  height: 50px;
+}

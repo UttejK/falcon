@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 export default function Navbar() {
   return (
     <nav className="navbar">
-      <Link className="Logo" to="/">
+      <Link className="logo" to="/">
+        <img src="/Falcon.svg" alt="FalconLogo" className="logo-image" />
         <h1>F.A.L.C.O.N</h1>
-        {/* <p>Fast Autonomous Lightweight Combat Operations Network</p> */}
       </Link>
       <ul className="navbar-ul">
         <NavItem to="/">Home</NavItem>
