@@ -7,6 +7,7 @@ import { useGLTF, useScroll } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { gsap } from "gsap";
 import { degToRad } from "three/src/math/MathUtils";
+import { useSpring, animated, config } from "@react-spring/three";
 
 export default function Drone2(props) {
   const rotorBackLeft = useRef();
@@ -15,34 +16,38 @@ export default function Drone2(props) {
   const rotorFrontLeft = useRef();
   const droneFull = useRef();
 
-  const tl = useRef();
-  const scroll = useScroll();
+  // const tl = useRef();
+  // const scroll = useScroll();
 
   const Drone2Speed = 800;
 
-  useFrame((_, delta) => {
+  useFrame(({ clock }, delta) => {
     rotorBackLeft.current.rotation.y += delta * Drone2Speed;
     rotorFrontRight.current.rotation.y += delta * Drone2Speed;
     rotorBackRight.current.rotation.y += delta * Drone2Speed * -1;
     rotorFrontLeft.current.rotation.y += delta * Drone2Speed * -1;
 
-    tl.current.seek(scroll?.offset * tl.current.duration());
+    droneFull.current.rotation.z = 0.05 * Math.sin(2 * clock.getElapsedTime());
+    droneFull.current.rotation.x =
+      0.05 * Math.sin(2 * clock.getElapsedTime() + Math.PI / 6);
+
+    // tl.current.seek(scroll?.offset * tl.current.duration());
   });
 
-  useLayoutEffect(() => {
-    tl.current = gsap.timeline();
+  // useLayoutEffect(() => {
+  //   tl.current = gsap.timeline();
 
-    tl.current.to(droneFull.current.rotation, {
-      duration: 2,
-      x: -1 * degToRad(30),
-      y: -1 * degToRad(30),
-    });
-    tl.current.to(droneFull.current.rotation, {
-      duration: 2,
-      x: -1 * degToRad(-60),
-      y: -1 * degToRad(90),
-    });
-  }, []);
+  //   tl.current.to(droneFull.current.rotation, {
+  //     duration: 2,
+  //     x: -1 * degToRad(30),
+  //     y: -1 * degToRad(30),
+  //   });
+  //   tl.current.to(droneFull.current.rotation, {
+  //     duration: 2,
+  //     x: -1 * degToRad(-60),
+  //     y: -1 * degToRad(90),
+  //   });
+  // }, []);
 
   const { nodes, materials } = useGLTF("/droneFull2.glb");
   return (
