@@ -11,7 +11,7 @@ function Home() {
 
   return (
     <section className="home">
-      <div className="home-intro">
+      {/* <div className="home-intro">
         <h3>INTRODUCING</h3>
         <h1>F.A.L.C.O.N</h1>
         <p>State of the art support Drones</p>
@@ -25,10 +25,24 @@ function Home() {
         >
           Learn More <HiArrowRight />{" "}
         </a>
+      </div> */}
+      <div className="home-layout-canvas">
+        <div className="home-container-1">
+          <RenderCanvas hasOrbitControls>
+            <Drone2 />
+          </RenderCanvas>
+        </div>
+        <div className="home-container-2">
+          <RenderCanvas hasOrbitControls>
+            <Drone2 />
+          </RenderCanvas>
+        </div>
+        <div className="home-container-3">
+          <RenderCanvas hasOrbitControls>
+            <Drone2 />
+          </RenderCanvas>
+        </div>
       </div>
-      <RenderCanvas hasOrbitControls>
-        <Drone2 />
-      </RenderCanvas>
     </section>
   );
 }

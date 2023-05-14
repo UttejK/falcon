@@ -48,8 +48,21 @@
   justify-content: center;
 }
 
-.home-fullscreen {
-  height: 100vh;
+.home-layout-canvas {
   width: 100vw;
-  background-color: red;
+  display: flex;
+}
+
+.home-container-1,
+.home-container-2,
+.home-container-3 {
+  // float: left;
+  padding: 0 0.1rem;
+  width: calc(100vw / 3);
+  transition: width 0.3s ease-in-out;
+
+  &:hover {
+    background-color: red;
+    width: 90vw;
+  }
 }

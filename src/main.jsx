@@ -2,7 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.scss";
 
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Outlet,
+  RouterProvider,
+  useParams,
+} from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
 
@@ -10,6 +15,17 @@ import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
 import Home from "./pages/Home/Home";
 import Explore from "./pages/Explore/Explore";
+
+const Detail = () => {
+  const params = useParams();
+  return (
+    <>
+      <div style={{ paddingTop: "10rem" }}>
+        <h1>Detail Page {params.id}</h1>
+      </div>
+    </>
+  );
+};
 
 const router = createBrowserRouter([
   {
@@ -37,6 +53,10 @@ const router = createBrowserRouter([
       {
         path: "contact",
         element: <Contact />,
+      },
+      {
+        path: "details/:id",
+        element: <Detail />,
       },
     ],
   },
