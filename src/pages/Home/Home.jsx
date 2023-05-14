@@ -4,6 +4,8 @@ import clsx from "clsx";
 import { HiArrowRight } from "react-icons/hi2";
 import RenderCanvas from "../../components/RenderCanvas/RenderCanvas";
 import Drone2 from "../../components/Drone/Drone2";
+import CombatDroneAutoSmooth from "../../components/Drone/CombatDroneAutoSmooth";
+import CDF from "../../components/Drone/CDF";
 import { Html } from "@react-three/drei";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -47,7 +49,7 @@ function Home() {
           className="home-container-1"
         >
           <RenderCanvas hasOrbitControls>
-            <Drone2 />
+            <CombatDroneAutoSmooth />{" "}
           </RenderCanvas>
         </div>
         <div
@@ -73,7 +75,7 @@ function Home() {
           className="home-container-3"
         >
           <RenderCanvas hasOrbitControls>
-            <Drone2 />
+            <CDF />
           </RenderCanvas>
         </div>
       </div>
