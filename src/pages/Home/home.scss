@@ -59,10 +59,43 @@
   // float: left;
   padding: 0 0.1rem;
   width: calc(100vw / 3);
-  transition: width 0.3s ease-in-out;
+  transition: width 0.3s ease-in;
+  cursor: pointer;
+}
 
-  &:hover {
-    background-color: red;
-    width: 90vw;
+.home-container-hover--1 {
+  .home-container-1 {
+    width: 90vw !important;
+  }
+
+  .home-container-2,
+  .home-container-3 {
+    width: 5vw !important;
   }
 }
+
+.home-container-hover--2 {
+  .home-container-2 {
+    width: 90vw !important;
+  }
+
+  .home-container-1,
+  .home-container-3 {
+    width: 5vw !important;
+  }
+}
+
+.home-container-hover--3 {
+  .home-container-3 {
+    width: 90vw !important;
+  }
+
+  .home-container-2,
+  .home-container-1 {
+    width: 5vw !important;
+  }
+}
+
+// .home-container-1 {
+//   object-fit: contain;
+// }

@@ -1,13 +1,16 @@
 import "./Home.scss";
 
+import clsx from "clsx";
 import { HiArrowRight } from "react-icons/hi2";
 import RenderCanvas from "../../components/RenderCanvas/RenderCanvas";
 import Drone2 from "../../components/Drone/Drone2";
 import { Html } from "@react-three/drei";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 function Home() {
   const navigate = useNavigate();
+  const [hovered, setHovered] = useState(null);
 
   return (
     <section className="home">
@@ -26,18 +29,49 @@ function Home() {
           Learn More <HiArrowRight />{" "}
         </a>
       </div> */}
-      <div className="home-layout-canvas">
-        <div className="home-container-1">
+      <div
+        className={clsx([
+          "home-layout-canvas",
+          hovered === 1 && "home-container-hover--1",
+          hovered === 2 && "home-container-hover--2",
+          hovered === 3 && "home-container-hover--3",
+        ])}
+      >
+        <div
+          onMouseEnter={() => {
+            setHovered(1);
+          }}
+          onMouseLeave={() => {
+            setHovered(undefined);
+          }}
+          className="home-container-1"
+        >
           <RenderCanvas hasOrbitControls>
             <Drone2 />
           </RenderCanvas>
         </div>
-        <div className="home-container-2">
+        <div
+          onMouseEnter={() => {
+            setHovered(2);
+          }}
+          onMouseLeave={() => {
+            setHovered(undefined);
+          }}
+          className="home-container-2"
+        >
           <RenderCanvas hasOrbitControls>
             <Drone2 />
           </RenderCanvas>
         </div>
-        <div className="home-container-3">
+        <div
+          onMouseEnter={() => {
+            setHovered(3);
+          }}
+          onMouseLeave={() => {
+            setHovered(undefined);
+          }}
+          className="home-container-3"
+        >
           <RenderCanvas hasOrbitControls>
             <Drone2 />
           </RenderCanvas>
