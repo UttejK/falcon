@@ -11,7 +11,7 @@ export default function Navbar() {
       </Link>
       <ul className="navbar-ul">
         <NavItem to="/">Home</NavItem>
-        <NavItem to="/explore">Explore</NavItem>
+        <NavItem to="/explore/2">Explore</NavItem>
         <NavItem to="/about">About</NavItem>
         <NavItem to="/contact">Contact</NavItem>
       </ul>

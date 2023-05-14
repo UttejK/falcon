@@ -40,6 +40,9 @@ function Home() {
         ])}
       >
         <div
+          onClick={() => {
+            navigate("/explore/1");
+          }}
           onMouseEnter={() => {
             setHovered(1);
           }}
@@ -53,6 +56,9 @@ function Home() {
           </RenderCanvas>
         </div>
         <div
+          onClick={() => {
+            navigate("/explore/2");
+          }}
           onMouseEnter={() => {
             setHovered(2);
           }}
@@ -66,6 +72,9 @@ function Home() {
           </RenderCanvas>
         </div>
         <div
+          onClick={() => {
+            navigate("/explore/3");
+          }}
           onMouseEnter={() => {
             setHovered(3);
           }}

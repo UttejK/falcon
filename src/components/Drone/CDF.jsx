@@ -10,9 +10,9 @@ export default function CDF(props) {
   return (
     <group {...props} dispose={null}>
       <group
-        position={[0, -0.2, 0]}
+        position={[0, -0.1, 0]}
         rotation={[Math.PI / 2, Math.PI, 0]}
-        scale={0.08}
+        scale={0.06}
       >
         <group position={[0, -0.6, 1.82]} rotation={[-0.38, 0, 0]}>
           <mesh

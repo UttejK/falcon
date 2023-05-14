@@ -14,8 +14,21 @@ const RenderCanvas = ({ hasOrbitControls, hasScrollControls, children }) => {
   return (
     <>
       <Suspense fallback={<RenderCanvasLoading />}>
-        <Canvas camera={{ fov: 35, zoom: 2.5, near: 0.1, far: 1000 }}>
-          {hasOrbitControls && <OrbitControls enableZoom={false} />}
+        <Canvas
+          camera={{ fov: 35, zoom: 2.5, near: 0.1, far: 1000 }}
+          resize={{
+            debounce: {
+              resize: 0,
+            },
+          }}
+        >
+          {hasOrbitControls && (
+            <OrbitControls
+              enableZoom={false}
+              enablePan={false}
+              enableDamping={true}
+            />
+          )}
           <pointLight position={[1, 1, 0]} intensity={2} color={"#FF0000"} />
           <pointLight position={[-1, 1, 0]} intensity={2} color={"#00FFFF"} />
           {hasScrollControls ? (

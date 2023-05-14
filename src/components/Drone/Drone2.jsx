@@ -18,13 +18,13 @@ export default function Drone2(props) {
   const tl = useRef();
   const scroll = useScroll();
 
-  const speed = 800;
+  const Drone2Speed = 800;
 
   useFrame((_, delta) => {
-    rotorBackLeft.current.rotation.y += delta * speed;
-    rotorFrontRight.current.rotation.y += delta * speed;
-    rotorBackRight.current.rotation.y += delta * speed * -1;
-    rotorFrontLeft.current.rotation.y += delta * speed * -1;
+    rotorBackLeft.current.rotation.y += delta * Drone2Speed;
+    rotorFrontRight.current.rotation.y += delta * Drone2Speed;
+    rotorBackRight.current.rotation.y += delta * Drone2Speed * -1;
+    rotorFrontLeft.current.rotation.y += delta * Drone2Speed * -1;
 
     tl.current.seek(scroll?.offset * tl.current.duration());
   });
@@ -48,8 +48,9 @@ export default function Drone2(props) {
   return (
     <group
       {...props}
-      // position={[0.4, -0.1, 0.1]}
-      rotation={[degToRad(30), degToRad(-30), 0]}
+      scale={0.65}
+      position={[0, -0.2, 0]}
+      rotation={[degToRad(15), 0, 0]}
       dispose={null}
       ref={droneFull}
     >
