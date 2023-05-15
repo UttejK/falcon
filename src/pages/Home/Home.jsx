@@ -8,7 +8,7 @@ import CombatDroneAutoSmooth from "../../components/Drone/CombatDroneAutoSmooth"
 import CDF from "../../components/Drone/CDF";
 import { Html } from "@react-three/drei";
 import { useNavigate } from "react-router-dom";
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 function Home() {
   const navigate = useNavigate();
@@ -39,7 +39,7 @@ function Home() {
               <button
                 className="canvas-button"
                 onClick={() => {
-                  navigate("/explore/1");
+                  navigate(import.meta.env.BASE_URL + "explore/1");
                 }}
                 onMouseEnter={(e) => {
                   setHovered(1);
@@ -65,7 +65,7 @@ function Home() {
               <button
                 className="canvas-button"
                 onClick={() => {
-                  navigate("/explore/2");
+                  navigate(import.meta.env.BASE_URL + "explore/2");
                 }}
                 onMouseEnter={(e) => {
                   setHovered(2);
@@ -91,7 +91,7 @@ function Home() {
               <button
                 className="canvas-button"
                 onClick={() => {
-                  navigate("/explore/3");
+                  navigate(import.meta.env.BASE_URL + "explore/3");
                 }}
                 onMouseEnter={(e) => {
                   setHovered(3);

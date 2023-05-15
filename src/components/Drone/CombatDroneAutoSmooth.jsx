@@ -14,7 +14,9 @@ export default function CombatDroneAutoSmooth(props) {
       0.03 * Math.sin(2 * clock.getElapsedTime());
   });
 
-  const { nodes, materials } = useGLTF("/CombatDroneAutoSmooth.glb");
+  const { nodes, materials } = useGLTF(
+    `${import.meta.env.BASE_URL}CombatDroneAutoSmooth.glb`
+  );
   return (
     <group {...props} dispose={null} ref={CombatDroneFull}>
       <group position={[-0.022, -0.35, 0]} scale={0.39}>
@@ -41,4 +43,4 @@ export default function CombatDroneAutoSmooth(props) {
   );
 }
 
-useGLTF.preload("/CombatDroneAutoSmooth.glb");
+useGLTF.preload(`${import.meta.env.BASE_URL}CombatDroneAutoSmooth.glb`);

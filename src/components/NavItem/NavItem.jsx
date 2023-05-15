@@ -11,7 +11,7 @@ export default function NavItem({ children, to }) {
           }
           return "nav-link";
         }}
-        to={to}
+        to={import.meta.env.BASE_URL + to}
       >
         {children}
       </NavLink>

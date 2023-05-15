@@ -7,7 +7,7 @@ import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 
 export default function CDF(props) {
-  const { nodes, materials } = useGLTF("/CDF.glb");
+  const { nodes, materials } = useGLTF(`${import.meta.env.BASE_URL}CDF.glb`);
   const CDFDrone = useRef();
 
   useFrame(({ clock }) => {
@@ -39,4 +39,4 @@ export default function CDF(props) {
   );
 }
 
-useGLTF.preload("/CDF.glb");
+useGLTF.preload(`${import.meta.env.BASE_URL}CDF.glb`);

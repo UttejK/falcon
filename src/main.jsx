@@ -12,7 +12,7 @@ import About from "./pages/About/About";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: import.meta.env.BASE_URL,
     element: (
       <>
         <Navbar />
