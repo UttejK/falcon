@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import Drone2 from "../../components/Drone/Drone2";
+import SurvDrone from "../../components/Drone/Drone";
 import CDF from "../../components/Drone/CDF";
 import CombatDroneAutoSmooth from "../../components/Drone/CombatDroneAutoSmooth";
 import RenderCanvas from "../../components/RenderCanvas/RenderCanvas";
@@ -9,9 +9,9 @@ export default function Explore() {
   return (
     <div id="canvas-container">
       <section>
-        <RenderCanvas hasOrbitControls>
+        <RenderCanvas>
           {id === "1" && <CombatDroneAutoSmooth />}
-          {id === "2" && <Drone2 />}
+          {id === "2" && <SurvDrone />}
           {id === "3" && <CDF />}
         </RenderCanvas>
       </section>

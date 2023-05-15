@@ -3,12 +3,12 @@ import "./Home.scss";
 import clsx from "clsx";
 import { HiArrowRight } from "react-icons/hi2";
 import RenderCanvas from "../../components/RenderCanvas/RenderCanvas";
-import Drone2 from "../../components/Drone/Drone2";
+import Drone2 from "../../components/Drone/Drone";
 import CombatDroneAutoSmooth from "../../components/Drone/CombatDroneAutoSmooth";
 import CDF from "../../components/Drone/CDF";
 import { Html } from "@react-three/drei";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 function Home() {
   const navigate = useNavigate();
@@ -40,25 +40,32 @@ function Home() {
         ])}
       >
         <div
-          onClick={() => {
-            navigate("/explore/1");
-          }}
           onMouseEnter={() => {
+            console.log("Enter 1");
             setHovered(1);
           }}
-          onMouseLeave={() => {
+          onMouseLeave={(e) => {
             setHovered(undefined);
           }}
           className="home-container-1"
         >
-          <RenderCanvas hasOrbitControls>
-            <CombatDroneAutoSmooth />{" "}
+          <RenderCanvas>
+            <CombatDroneAutoSmooth />
+            <Html>
+              <button
+                onClick={() => {
+                  navigate("/explore/1");
+                }}
+                onMouseEnter={(e) => {
+                  setHovered(1);
+                }}
+              >
+                Click HERE
+              </button>
+            </Html>
           </RenderCanvas>
         </div>
         <div
-          onClick={() => {
-            navigate("/explore/2");
-          }}
           onMouseEnter={() => {
             setHovered(2);
           }}
@@ -69,12 +76,21 @@ function Home() {
         >
           <RenderCanvas hasOrbitControls>
             <Drone2 />
+            <Html>
+              <button
+                onClick={() => {
+                  navigate("/explore/2");
+                }}
+                onMouseEnter={(e) => {
+                  setHovered(2);
+                }}
+              >
+                Click HERE
+              </button>
+            </Html>
           </RenderCanvas>
         </div>
         <div
-          onClick={() => {
-            navigate("/explore/3");
-          }}
           onMouseEnter={() => {
             setHovered(3);
           }}
@@ -85,6 +101,18 @@ function Home() {
         >
           <RenderCanvas hasOrbitControls>
             <CDF />
+            <Html>
+              <button
+                onClick={() => {
+                  navigate("/explore/3");
+                }}
+                onMouseEnter={(e) => {
+                  setHovered(3);
+                }}
+              >
+                Click HERE
+              </button>
+            </Html>
           </RenderCanvas>
         </div>
       </div>
