@@ -8,9 +8,11 @@ export default function Navbar() {
     <nav className="navbar">
       <Link className="logo" to={import.meta.env.BASE_URL}>
         <img
-          src={import.meta.env.BASE_URL + "Falcon.svg"}
+          src={import.meta.env.BASE_URL + "FalconTiny.svg"}
           alt="FalconLogo"
           className="logo-image"
+          height={"50px"}
+          width={"50px"}
         />
         <h1>F.A.L.C.O.N</h1>
       </Link>
