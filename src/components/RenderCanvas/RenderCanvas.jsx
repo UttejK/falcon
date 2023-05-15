@@ -29,8 +29,8 @@ const RenderCanvas = ({ hasOrbitControls, hasScrollControls, children }) => {
               enableDamping={true}
             />
           )}
-          <pointLight position={[1, 1, 0]} intensity={2} color={"#FF0000"} />
-          <pointLight position={[-1, 1, 0]} intensity={2} color={"#00FFFF"} />
+          <pointLight position={[1, 1, 0]} intensity={2} color={"#ff0000"} />
+          <pointLight position={[-1, 1, 0]} intensity={2} color={"#00ffff"} />
           {hasScrollControls ? (
             <ScrollControls pages={3} damping={0.25}>
               {children}

@@ -36,7 +36,6 @@
 
     &:hover {
       color: white;
-
       background-color: rgba(0, 0, 0, 0.3);
     }
   }
@@ -99,3 +98,20 @@
 // .home-container-1 {
 //   object-fit: contain;
 // }
+
+.canvas-button {
+  position: relative;
+  transform: translateY(15rem);
+  font-weight: 800;
+  width: max-content;
+  padding: 1rem;
+  border-radius: 1rem;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-out;
+
+  &:hover {
+    color: black;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+}

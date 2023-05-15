@@ -16,21 +16,6 @@ function Home() {
 
   return (
     <section className="home">
-      {/* <div className="home-intro">
-        <h3>INTRODUCING</h3>
-        <h1>F.A.L.C.O.N</h1>
-        <p>State of the art support Drones</p>
-        <a
-          className="home-link-center"
-          href="/explore"
-          onClick={(e) => {
-            e.preventDefault();
-            navigate("/explore");
-          }}
-        >
-          Learn More <HiArrowRight />{" "}
-        </a>
-      </div> */}
       <div
         className={clsx([
           "home-layout-canvas",
@@ -41,7 +26,6 @@ function Home() {
       >
         <div
           onMouseEnter={() => {
-            console.log("Enter 1");
             setHovered(1);
           }}
           onMouseLeave={(e) => {
@@ -49,10 +33,11 @@ function Home() {
           }}
           className="home-container-1"
         >
-          <RenderCanvas>
+          <RenderCanvas hasOrbitControls>
             <CombatDroneAutoSmooth />
-            <Html>
+            <Html center>
               <button
+                className="canvas-button"
                 onClick={() => {
                   navigate("/explore/1");
                 }}
@@ -60,7 +45,7 @@ function Home() {
                   setHovered(1);
                 }}
               >
-                Click HERE
+                Learn more
               </button>
             </Html>
           </RenderCanvas>
@@ -76,8 +61,9 @@ function Home() {
         >
           <RenderCanvas hasOrbitControls>
             <Drone2 />
-            <Html>
+            <Html center>
               <button
+                className="canvas-button"
                 onClick={() => {
                   navigate("/explore/2");
                 }}
@@ -85,7 +71,7 @@ function Home() {
                   setHovered(2);
                 }}
               >
-                Click HERE
+                Learn more
               </button>
             </Html>
           </RenderCanvas>
@@ -101,8 +87,9 @@ function Home() {
         >
           <RenderCanvas hasOrbitControls>
             <CDF />
-            <Html>
+            <Html center>
               <button
+                className="canvas-button"
                 onClick={() => {
                   navigate("/explore/3");
                 }}
@@ -110,7 +97,7 @@ function Home() {
                   setHovered(3);
                 }}
               >
-                Click HERE
+                Learn more
               </button>
             </Html>
           </RenderCanvas>
