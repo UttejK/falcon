@@ -1,12 +1,34 @@
-.about-description {
+#about,
+#contact {
+  background-color: black;
   display: flex;
-  margin: 3rem 5rem;
-  gap: 2rem;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  color: white;
+
+  div {
+    h1,
+    p {
+      color: white;
+    }
+  }
+}
+
+.about-description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 8rem;
+  margin: 3rem 5rem;
+  gap: 2rem;
   background-color: inherit;
   color: black;
   mix-blend-mode: difference;
-  height: 100vh;
+}
+.form-container {
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

@@ -45,7 +45,7 @@ function Home() {
                   setHovered(1);
                 }}
               >
-                Learn more
+                Learn more <HiArrowRight />
               </button>
             </Html>
           </RenderCanvas>
@@ -71,7 +71,7 @@ function Home() {
                   setHovered(2);
                 }}
               >
-                Learn more
+                Learn more <HiArrowRight />
               </button>
             </Html>
           </RenderCanvas>
@@ -97,7 +97,7 @@ function Home() {
                   setHovered(3);
                 }}
               >
-                Learn more
+                Learn more <HiArrowRight />
               </button>
             </Html>
           </RenderCanvas>

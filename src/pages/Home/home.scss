@@ -18,7 +18,7 @@
   width: max-content;
   gap: 0.3rem;
   background-color: rgba(225, 225, 225, 0.1);
-  color: white;
+  color: #fff;
 
   h3,
   h1 {
@@ -100,6 +100,10 @@
 // }
 
 .canvas-button {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
   position: relative;
   transform: translateY(15rem);
   font-weight: 800;
@@ -107,8 +111,9 @@
   padding: 1rem;
   border-radius: 1rem;
   color: white;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(100, 100, 100, 0.3);
   transition: all 0.3s ease-out;
+  border: none;
 
   &:hover {
     color: black;

@@ -1,9 +1,11 @@
 .nav-link {
   padding: 0.5rem 1rem;
-  border-radius: 100rem;
   color: grey;
   transition: all 0.2s ease-out;
   font-weight: 600;
+  background-color: transparent;
+  border: none;
+  height: max-content;
 
   &:where(:hover, :focus-visible) {
     color: white;

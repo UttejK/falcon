@@ -17,7 +17,7 @@ export default function CombatDroneAutoSmooth(props) {
   const { nodes, materials } = useGLTF("/CombatDroneAutoSmooth.glb");
   return (
     <group {...props} dispose={null} ref={CombatDroneFull}>
-      <group position={[0, -0.35, 0]} scale={0.39}>
+      <group position={[-0.022, -0.35, 0]} scale={0.39}>
         <group
           position={[0.28, 1.16, 0.68]}
           rotation={[Math.PI, 0, Math.PI]}

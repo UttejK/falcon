@@ -4,7 +4,7 @@
   align-items: center;
   gap: 2rem;
   width: 100%;
-  padding: 1.6rem 5rem;
+  padding: 1.6rem 4rem;
   background-color: #46464633;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -17,11 +17,13 @@
   display: flex;
   flex-direction: row;
   gap: 1rem;
+  align-items: center;
 }
 
 .logo {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
   font-family: "Bruno Ace SC", cursive;
   color: white;
@@ -35,4 +37,16 @@
 .logo-image {
   width: 50px;
   height: 50px;
+}
+
+.navbar-help {
+  color: grey;
+  padding: 0.9rem;
+  padding-left: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+
+  &:hover {
+    color: white;
+  }
 }
