@@ -1,4 +1,4 @@
-import "./Home.scss";
+import "./home.scss";
 
 import clsx from "clsx";
 import { HiArrowRight } from "react-icons/hi2";

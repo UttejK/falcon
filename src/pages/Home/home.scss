@@ -8,7 +8,6 @@
   left: 50%;
   z-index: 20;
   transform: translateX(-50%);
-
   padding: 1rem;
   border-radius: 1rem;
   display: flex;
@@ -56,7 +55,6 @@
 .home-container-1,
 .home-container-2,
 .home-container-3 {
-  // float: left;
   padding: 0 0.1rem;
   width: calc(100vw / 3);
   transition: width 0.3s ease-in;
