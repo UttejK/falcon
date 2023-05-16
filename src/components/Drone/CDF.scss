@@ -1,0 +1,31 @@
+.cdf-description-container {
+  display: flex;
+  transform: translateY(5rem);
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  &:hover .cdf-description {
+    opacity: 1;
+  }
+}
+
+.cdf-description-button {
+  text-align: center;
+  color: transparent;
+  padding: 1rem 1.5rem;
+  border-radius: 5rem;
+  background-color: #ffffff50;
+  cursor: pointer;
+}
+
+.cdf-description {
+  opacity: 0;
+  top: 2rem;
+  width: 20rem;
+  padding: 1.5rem;
+  background-color: #ffffff70;
+  border-radius: 1rem;
+  font-weight: 700;
+  transition: all 0.3s ease-out;
+}

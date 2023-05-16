@@ -9,7 +9,7 @@ export default function Explore() {
   return (
     <div id="canvas-container">
       <section>
-        <RenderCanvas>
+        <RenderCanvas hasOrbitControls>
           {id === "1" && <CombatDroneAutoSmooth />}
           {id === "2" && <SurvDrone />}
           {id === "3" && <CDF />}
