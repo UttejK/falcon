@@ -45,7 +45,12 @@ function Home() {
                   setHovered(1);
                 }}
               >
-                Learn more <HiArrowRight />
+                Learn more{" "}
+                <HiArrowRight
+                  onMouseEnter={() => {
+                    setHovered(1);
+                  }}
+                />
               </button>
             </Html>
           </RenderCanvas>
@@ -71,7 +76,12 @@ function Home() {
                   setHovered(2);
                 }}
               >
-                Learn more <HiArrowRight />
+                Learn more{" "}
+                <HiArrowRight
+                  onMouseEnter={() => {
+                    setHovered(2);
+                  }}
+                />
               </button>
             </Html>
           </RenderCanvas>
@@ -97,7 +107,12 @@ function Home() {
                   setHovered(3);
                 }}
               >
-                Learn more <HiArrowRight />
+                Learn more{" "}
+                <HiArrowRight
+                  onMouseEnter={() => {
+                    setHovered(3);
+                  }}
+                />
               </button>
             </Html>
           </RenderCanvas>

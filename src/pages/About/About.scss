@@ -122,25 +122,20 @@ p {
     gap: 2rem;
   }
 
-  li {
+  a {
+    display: flex;
     border: 1px solid rgba(70, 70, 70, 0.7);
     background-color: rgba(50, 50, 50, 0.7);
     border-radius: 1rem;
-    display: block;
     padding: 1rem;
     font-weight: 700;
     width: max-content;
     transition: all 0.3s ease-out;
-
+    align-items: center;
+    gap: 0.7rem;
     &:hover {
       background-color: white;
       color: black;
-    }
-
-    a {
-      display: flex;
-      align-items: center;
-      gap: 0.7rem;
     }
   }
 }
