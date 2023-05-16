@@ -6,10 +6,31 @@ import "./CDF.scss";
 import React, { useRef, useState } from "react";
 import { Html, useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-import { animated, useScroll, useSpring } from "@react-spring/three";
-import { degToRad, radToDeg } from "three/src/math/MathUtils";
+import { animated, useSpring } from "@react-spring/three";
+import { degToRad } from "three/src/math/MathUtils";
 
-export default function CDF(props) {
+const ModelGroup = ({ nodes, materials }) => {
+  return (
+    <>
+      <group position={[0, -0.6, 1.82]} rotation={[-0.38, 0, 0]}>
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["CDF-Body-1"].geometry}
+          material={materials["CDF-Body-textures"]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["CDF-Body-2"].geometry}
+          material={materials["CDF-Body-textures"]}
+        />
+      </group>
+    </>
+  );
+};
+
+export default function CDF({ hasInfo, ...props }) {
   const { nodes, materials } = useGLTF(`${import.meta.env.BASE_URL}CDF.glb`);
   const CDFDrone = useRef();
   const [scrollVal, setScrollVal] = useState(0);
@@ -58,41 +79,47 @@ export default function CDF(props) {
     CDFDrone.current.position.y = 0.02 * Math.sin(2 * clock.getElapsedTime());
     // console.log(CDFRot);
   });
+
   return (
     <group ref={CDFDrone} {...props} dispose={null}>
-      <animated.group
-        position={[0, -0.1, 0]}
-        rotation={[Math.PI / 2, Math.PI, 0]}
-        rotation-z={CDFRot}
-        scale={0.06}
-      >
-        <Html center>
-          <div className="cdf-description-container">
-            <label htmlFor="text" className="cdf-description-button">
-              1
-            </label>
-            <p className="cdf-description">
+      {hasInfo ? (
+        <animated.group
+          position={[0, -0.1, 0]}
+          rotation={[Math.PI / 2, Math.PI, 0]}
+          rotation-z={CDFRot}
+          scale={0.06}
+        >
+          <Html center>
+            <div className="cdf-description-container">
+              <label htmlFor="text" className="cdf-description-button">
+                1
+              </label>
+              {/* <p className="cdf-description">
               This is an Advanced Crawler Drone made to burn its targets to the
               crisp with the combined power of the fire dispensers on both sides
               of the Drone
-            </p>
-          </div>
-        </Html>
-        <group position={[0, -0.6, 1.82]} rotation={[-0.38, 0, 0]}>
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes["CDF-Body-1"].geometry}
-            material={materials["CDF-Body-textures"]}
-          />
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes["CDF-Body-2"].geometry}
-            material={materials["CDF-Body-textures"]}
-          />
+            </p> */}
+              <p className="cdf-description">
+                Behold the marvel of technological ingenuity, the Advanced
+                Crawler Drone! Unleashing a relentless torrent of scorching
+                flames from its dual fire dispensers, it incinerates its targets
+                to a crisp, leaving no room for escape. Prepare to witness the
+                awe-inspiring might of this formidable creation, beckoning all
+                who seek power and dominance to possess this extraordinary drone
+              </p>
+            </div>
+          </Html>
+          <ModelGroup {...{ nodes, materials }} />
+        </animated.group>
+      ) : (
+        <group
+          position={[0, -0.1, 0]}
+          rotation={[Math.PI / 2, Math.PI, 0]}
+          scale={0.06}
+        >
+          <ModelGroup {...{ nodes, materials }} />
         </group>
-      </animated.group>
+      )}
     </group>
   );
 }

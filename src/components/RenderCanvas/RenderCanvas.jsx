@@ -24,8 +24,8 @@ const RenderCanvas = ({ hasOrbitControls, hasScrollControls, children }) => {
         >
           {hasOrbitControls && (
             <OrbitControls
-              // enableZoom={false}
-              // enablePan={false}
+              enableZoom={false}
+              enablePan={false}
               enableDamping={true}
             />
           )}
