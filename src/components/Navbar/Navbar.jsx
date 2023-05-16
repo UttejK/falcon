@@ -2,6 +2,7 @@ import "./Navbar.scss";
 import NavItem from "../NavItem/NavItem";
 import { Link } from "react-router-dom";
 import { BiHelpCircle } from "react-icons/bi";
+import { BsGithub } from "react-icons/bs";
 
 export default function Navbar() {
   return (
@@ -18,18 +19,26 @@ export default function Navbar() {
       </Link>
       <ul className="navbar-ul">
         <NavItem to="">Home</NavItem>
-        <NavItem to="explore/2">Explore</NavItem>
         <NavItem to="about">About</NavItem>
         <li>
           <a
-            className="navbar-help"
+            style={{ padding: "1rem" }}
             onClick={() => {
               alert(
                 "You can use the left click to orbit on the home page and on the explore page..."
               );
             }}
           >
-            <BiHelpCircle size={(22, 22)} />
+            <BiHelpCircle size={(22, 22)} color="grey" />
+          </a>
+        </li>
+        <li>
+          <a
+            style={{ padding: "1rem" }}
+            href="https://github.com/UttejK"
+            target="_blank"
+          >
+            <BsGithub size={(22, 22)} color="grey" />
           </a>
         </li>
       </ul>
