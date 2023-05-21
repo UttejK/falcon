@@ -1,16 +1,16 @@
-.cdf-description-container {
+.drone-description-container {
   display: flex;
-  transform: translateY(5rem);
+  transform: translateX(23rem);
   flex-direction: column;
   align-items: center;
   gap: 1rem;
 
-  &:hover .cdf-description {
+  &:hover .drone-description {
     opacity: 1;
   }
 }
 
-.cdf-description-button {
+.drone-description-button {
   text-align: center;
   color: transparent;
   padding: 1rem 1.5rem;
@@ -19,7 +19,7 @@
   cursor: pointer;
 }
 
-.cdf-description {
+.drone-description {
   opacity: 0;
   top: 2rem;
   width: 20rem;
