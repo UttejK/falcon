@@ -22,6 +22,7 @@ export default function Navbar() {
         <NavItem to="about">About</NavItem>
         <li>
           <a
+            className="nav-link nav-link--active"
             style={{ padding: "1rem" }}
             onClick={() => {
               alert(
@@ -29,16 +30,17 @@ export default function Navbar() {
               );
             }}
           >
-            <BiHelpCircle size={(22, 22)} color="grey" />
+            <BiHelpCircle size={(22, 22)} />
           </a>
         </li>
         <li>
           <a
+            className="nav-link nav-link--active"
             style={{ padding: "1rem" }}
             href="https://github.com/UttejK"
             target="_blank"
           >
-            <BsGithub size={(22, 22)} color="grey" />
+            <BsGithub size={(22, 22)} />
           </a>
         </li>
       </ul>

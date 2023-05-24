@@ -49,3 +49,30 @@
     color: white;
   }
 }
+
+.nav-link {
+  padding: 0.5rem 1rem;
+  color: grey;
+  transition: all 0.2s ease-out;
+  font-weight: 600;
+  background-color: transparent;
+  border: none;
+  height: max-content;
+
+  &:where(:hover, :focus-visible) {
+    cursor: pointer;
+  }
+
+  &--active {
+    color: grey;
+  }
+
+  svg {
+    fill: grey;
+    transition: fill 0.2s ease-out;
+
+    &:hover {
+      fill: white;
+    }
+  }
+}
