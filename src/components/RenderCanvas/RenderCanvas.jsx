@@ -1,19 +1,11 @@
-import { OrbitControls, ScrollControls } from "@react-three/drei";
+import { OrbitControls, ScrollControls, Loader } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
-
-function RenderCanvasLoading() {
-  return (
-    <div className="page">
-      <h1>Loading Please Wait...</h1>
-    </div>
-  );
-}
 
 const RenderCanvas = ({ hasOrbitControls, hasScrollControls, children }) => {
   return (
     <>
-      <Suspense fallback={<RenderCanvasLoading />}>
+      <Suspense fallback={<Loader />}>
         <Canvas
           camera={{ fov: 35, zoom: 2.5, near: 0.1, far: 1000 }}
           resize={{
